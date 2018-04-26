@@ -1,20 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47" started-at="2018-04-26T19:26:45Z" finished-at="2018-04-26T19:26:45Z">
+  <suite name="Default suite" duration-ms="24641" started-at="2018-04-26T21:15:52Z" finished-at="2018-04-26T21:16:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47" started-at="2018-04-26T19:26:45Z" finished-at="2018-04-26T19:26:45Z">
+    <test name="Default test" duration-ms="24641" started-at="2018-04-26T21:15:52Z" finished-at="2018-04-26T21:16:16Z">
       <class name="com.mosaicsmartdata.technicaltest.tests.LoginTest">
-        <test-method status="FAIL" signature="startUpTest()[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@3043fe0e]" name="startUpTest" is-config="true" duration-ms="0" started-at="2018-04-26T20:26:45Z" finished-at="2018-04-26T20:26:45Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="PASS" signature="logintest(java.util.Hashtable)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@3043fe0e]" name="logintest" duration-ms="17602" started-at="2018-04-26T22:15:52Z" data-provider="getData" finished-at="2018-04-26T22:16:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Password=validpassword, LoginStatus=LoginSuccessful, UserName=validusername}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="aftermethod(java.lang.reflect.Method)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@3043fe0e]" name="aftermethod" is-config="true" duration-ms="963" started-at="2018-04-26T22:16:10Z" finished-at="2018-04-26T22:16:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.mosaicsmartdata.technicaltest.tests.LoginTest.logintest(java.util.Hashtable) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+        <test-method status="PASS" signature="logintest(java.util.Hashtable)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@3043fe0e]" name="logintest" duration-ms="4758" started-at="2018-04-26T22:16:11Z" data-provider="getData" finished-at="2018-04-26T22:16:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Password=invalidpassword, LoginStatus=LoginUnSuccessful, UserName=invalidusername}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="aftermethod(java.lang.reflect.Method)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@3043fe0e]" name="aftermethod" is-config="true" duration-ms="730" started-at="2018-04-26T22:16:16Z" finished-at="2018-04-26T22:16:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.mosaicsmartdata.technicaltest.tests.LoginTest.logintest(java.util.Hashtable) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+        <test-method status="FAIL" signature="afterTest()[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@3043fe0e]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-04-26T22:16:16Z" finished-at="2018-04-26T22:16:16Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+
+ Logout is UnSuccessful for user : validusername ; Expecting to logout, 
+ Login is Successful for user : invalidusername ; Expecting login Error]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.mosaicsmartdata.technicaltest.excelutils.Xls_Reader.isSheetExist(Xls_Reader.java:115)
-	at com.mosaicsmartdata.technicaltest.excelutils.Xls_Reader.getColumnCount(Xls_Reader.java:100)
-	at com.mosaicsmartdata.technicaltest.basetest.BaseTest.readTestDatFromXLS(BaseTest.java:63)
-	at com.mosaicsmartdata.technicaltest.basetest.BaseTest.startUpTest(BaseTest.java:37)
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+
+ Logout is UnSuccessful for user : validusername ; Expecting to logout, 
+ Login is Successful for user : invalidusername ; Expecting login Error
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:37)
+	at com.mosaicsmartdata.technicaltest.tests.LoginTest.afterTest(LoginTest.java:115)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -23,37 +74,8 @@
 	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
-	at org.testng.TestRunner.run(TestRunner.java:609)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startUpTest -->
-        <test-method status="FAIL" signature="logintest(java.util.Hashtable)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@3043fe0e]" name="logintest" duration-ms="0" started-at="2018-04-26T20:26:45Z" data-provider="getData" finished-at="2018-04-26T20:26:45Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:131)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:426)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1383)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1075)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1180)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:225)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:114)
 	at org.testng.TestRunner.privateRun(TestRunner.java:767)
 	at org.testng.TestRunner.run(TestRunner.java:617)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
@@ -70,10 +92,10 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logintest -->
+        </test-method> <!-- afterTest -->
       </class> <!-- com.mosaicsmartdata.technicaltest.tests.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

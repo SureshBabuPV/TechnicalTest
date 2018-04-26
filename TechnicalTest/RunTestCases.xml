@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="RunTestCase" verbose="1" >
+  <test name="Currency_LoginTest">
+   <packages>
+      <package name="com.mosaicsmartdata.technicaltest.tests" />
+   </packages>
+  </test>
+</suite>

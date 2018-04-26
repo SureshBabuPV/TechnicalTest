@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 
 import com.mosaicsmartdata.technicaltest.excelutils.Xls_Reader;
@@ -30,13 +29,13 @@ public class BaseTest {
 	public ITestResult result;
 	public String strTestName;
 
-	@BeforeTest
+/*	@BeforeTest
 	public void startUpTest() throws Exception {
 
 		getConfigProperties(); // Initialising Configuration properties
 		readTestDatFromXLS(); // Initialising Test Case Data using xls
 		softAssertion = new SoftAssert();
-	}
+	}*/
 
 	public void getConfigProperties() throws IOException {
 		// Reading Property files
@@ -60,9 +59,11 @@ public class BaseTest {
 		test_data = new Xls_Reader(System.getProperty("user.dir")
 				+ config_prop.getProperty("testdat_path") + "\\"
 				+ testcase_name + ".xlsx");
+		
+		//Getting number of rows and column
 		colcount = test_data.getColumnCount("Data");
 		rowcount = test_data.getRowCount("Data");
-
+		//creating two dim object array each row contains Hashtable
 		dataHashTable = new Object[rowcount - 1][1];
 		for (i = 2; i <= rowcount; i++) {
 			Hashtable<String, String> tempHashTable = new Hashtable<String, String>();
@@ -75,6 +76,8 @@ public class BaseTest {
 	}
 
 	public void openBrowser() throws Exception {
+		
+		//To open browser currently implemented only chrome.
 		if (config_prop.getProperty("browser").equals("chrome")) {
 			System.setProperty(
 					"webdriver.chrome.driver",
