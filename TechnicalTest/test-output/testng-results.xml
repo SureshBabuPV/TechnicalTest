@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="17863" started-at="2018-04-26T01:15:18Z" finished-at="2018-04-26T01:15:36Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="17863" started-at="2018-04-26T01:15:18Z" finished-at="2018-04-26T01:15:36Z">
+      <class name="com.mosaicsmartdata.technicaltest.tests.LoginTest">
+        <test-method status="PASS" signature="startUpTest()[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@78e67e0a]" name="startUpTest" is-config="true" duration-ms="4555" started-at="2018-04-26T02:15:18Z" finished-at="2018-04-26T02:15:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startUpTest -->
+        <test-method status="PASS" signature="logintest(java.util.Hashtable)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@78e67e0a]" name="logintest" duration-ms="11784" started-at="2018-04-26T02:15:23Z" data-provider="getData" finished-at="2018-04-26T02:15:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Password=validpassword, LoginStatus=LoginSuccessful, UserName=validusername}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="aftermethod(java.lang.reflect.Method)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@78e67e0a]" name="aftermethod" is-config="true" duration-ms="296" started-at="2018-04-26T02:15:35Z" finished-at="2018-04-26T02:15:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.mosaicsmartdata.technicaltest.tests.LoginTest.logintest(java.util.Hashtable) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+        <test-method status="PASS" signature="logintest(java.util.Hashtable)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@78e67e0a]" name="logintest" duration-ms="509" started-at="2018-04-26T02:15:35Z" data-provider="getData" finished-at="2018-04-26T02:15:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Password=invalidpassword, LoginStatus=LoginUnSuccessful, UserName=invalidusername}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="aftermethod(java.lang.reflect.Method)[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@78e67e0a]" name="aftermethod" is-config="true" duration-ms="48" started-at="2018-04-26T02:15:36Z" finished-at="2018-04-26T02:15:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.mosaicsmartdata.technicaltest.tests.LoginTest.logintest(java.util.Hashtable) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:com.mosaicsmartdata.technicaltest.tests.LoginTest@78e67e0a]" name="tearDownTest" is-config="true" duration-ms="653" started-at="2018-04-26T02:15:36Z" finished-at="2018-04-26T02:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+      </class> <!-- com.mosaicsmartdata.technicaltest.tests.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
