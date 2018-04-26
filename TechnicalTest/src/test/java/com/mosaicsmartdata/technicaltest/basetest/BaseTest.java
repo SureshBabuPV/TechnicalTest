@@ -10,17 +10,13 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
 import org.testng.asserts.SoftAssert;
 
 import com.mosaicsmartdata.technicaltest.excelutils.Xls_Reader;
 import com.mosaicsmartdata.technicaltest.extentreports.ExtentManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-
-
 
 public class BaseTest {
 	public Properties config_prop = null;
@@ -31,30 +27,15 @@ public class BaseTest {
 	public SoftAssert softAssertion;
 	public ExtentReports extReport = ExtentManager.getInstance();
 	public ExtentTest testLog;
-
 	public ITestResult result;
+	public String strTestName;
 
-	
-	
 	@BeforeTest
 	public void startUpTest() throws Exception {
-		
-		getConfigProperties(); //Initialising Configuration properties
-		readTestDatFromXLS(); //Initialising Test Case Data using xls
-		openBrowser(); //open chrome browser
+
+		getConfigProperties(); // Initialising Configuration properties
+		readTestDatFromXLS(); // Initialising Test Case Data using xls
 		softAssertion = new SoftAssert();
-	}
-
-	@AfterTest
-	public void tearDownTest() throws Exception {
-		driver.quit(); //Closing driver
-	
- 	}
-
-	@DataProvider(name = "getData")
-	public Object[][] getData() {
-
-		return dataHashTable;
 	}
 
 	public void getConfigProperties() throws IOException {
@@ -92,20 +73,21 @@ public class BaseTest {
 			dataHashTable[i - 2][0] = tempHashTable;
 		}
 	}
-	public void openBrowser() throws Exception
-	{
-		if(config_prop.getProperty("browser").equals("chrome"))
-		{
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")
-					+ config_prop.getProperty("drivers_path")+ "\\chromedriver.exe");
+
+	public void openBrowser() throws Exception {
+		if (config_prop.getProperty("browser").equals("chrome")) {
+			System.setProperty(
+					"webdriver.chrome.driver",
+					System.getProperty("user.dir")
+							+ config_prop.getProperty("drivers_path")
+							+ "\\chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		} else {
+			throw new Exception("This Browser Type Not Implemented");
 		}
-		else {
-			throw new Exception("This Browser Type Not Implemented"); 
-		}		
-			
+
 	}
 
 }

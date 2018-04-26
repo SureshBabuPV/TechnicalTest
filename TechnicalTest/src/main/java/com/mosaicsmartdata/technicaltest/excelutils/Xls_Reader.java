@@ -8,17 +8,17 @@ import java.util.Calendar;
 
 public class Xls_Reader {
 
-	public String path;
+	public String strPath;
 	public FileInputStream fis = null;
 	private XSSFWorkbook workbook = null;
 	private XSSFSheet sheet = null;
 	private XSSFRow row = null;
 	private XSSFCell cell = null;
 
-	public Xls_Reader(String path) {
-		this.path = path;
+	public Xls_Reader(String strPath) {
+		this.strPath = strPath;
 		try {
-			fis = new FileInputStream(path);
+			fis = new FileInputStream(strPath);
 			workbook = new XSSFWorkbook(fis);
 			sheet = workbook.getSheetAt(0);
 			fis.close();

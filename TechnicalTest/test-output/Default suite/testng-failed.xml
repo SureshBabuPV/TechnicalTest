@@ -5,10 +5,8 @@
     <classes>
       <class name="com.mosaicsmartdata.technicaltest.tests.LoginTest">
         <methods>
-          <include name="tearDownTest"/>
-          <include name="logintest" invocation-numbers="0 1"/>
+          <include name="logintest"/>
           <include name="startUpTest"/>
-          <include name="aftermethod"/>
         </methods>
       </class> <!-- com.mosaicsmartdata.technicaltest.tests.LoginTest -->
     </classes>
