@@ -18,10 +18,6 @@ import com.mosaicsmartdata.technicaltest.pages.HomePage;
 import com.mosaicsmartdata.technicaltest.pages.LoginPage;
 import com.relevantcodes.extentreports.LogStatus;
 
-/**
- * @author sbabu
- *
- */
 public class LoginTest extends BaseTest {
 	LoginPage loginpage;
 	HomePage homepage;

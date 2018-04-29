@@ -6,7 +6,7 @@
       <class name="com.mosaicsmartdata.technicaltest.tests.LoginTest">
         <methods>
           <include name="logintest"/>
-          <include name="startUpTest"/>
+          <include name="aftermethod"/>
         </methods>
       </class> <!-- com.mosaicsmartdata.technicaltest.tests.LoginTest -->
     </classes>
