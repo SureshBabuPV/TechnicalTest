@@ -13,8 +13,7 @@ public class HomePage {
 	WebDriver driver;
 	public ExtentTest testLog;
 	public String strPageName= "HomePage : ";
-	
-	//Comment added
+	//TEST
 
 	@FindBy(xpath = "//h1[text()='Dashboard']")
 	private WebElement txt_Dashboard;
