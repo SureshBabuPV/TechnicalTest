@@ -14,7 +14,7 @@ public class HomePage {
 	public ExtentTest testLog;
 	public String strPageName= "HomePage : ";
 	//TEST
-
+	//New comment added
 	@FindBy(xpath = "//h1[text()='Dashboard']")
 	private WebElement txt_Dashboard;
 	@FindBy(xpath = "//a[text()='Sign out']")
